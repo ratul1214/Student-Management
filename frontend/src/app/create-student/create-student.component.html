@@ -1,0 +1,32 @@
+
+<div style="padding-left:9%;">
+    <div>
+      <div class = "rowbody top">
+        <div class = "createRow">
+          Create a New Student
+        </div>
+    </div>
+      <div class = "rowbody">
+      <div class = "createRow">
+        <input class = "createRow" type= "text" [(ngModel)]="studentt.stud_id" placeholder="Event Serial Number"/>
+      </div>
+      <div class = "createRow">
+          <input class = "createRow"type= "text"  [(ngModel)]="studentt.fname" placeholder="Event title"/>
+      </div>
+      <div class = "createRow">
+          <input class = "createRow" type= "text" [(ngModel)]="studentt.lname" placeholder="Event Description"/>
+      </div>
+      <div class = "createRow">
+          <input class = "createRow" type= "text" [(ngModel)]="studentt.email" placeholder="Event Date"/>
+      </div>
+    </div>
+  
+    <div class = "bottom_btns">
+        <span class = "btn_create"><span routerLink="/students">Back</span></span>
+  
+        <span class = "btn_create save"><span (click)= save(studentt)> Save </span></span>
+    </div>
+    
+    </div>
+  </div>
+  

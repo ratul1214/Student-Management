@@ -1,0 +1,26 @@
+<h2>Checkbox list example</h2>
+
+<h2> Name : {{student.lname}}  {{student.fname}}</h2>
+
+<h2>Courses:</h2>
+<h2 *ngIf="student.courses.length == 0">No Course Enrolled</h2>
+<table class = "listtable" *ngIf="student.courses.length != 0">
+            <tbody>
+            <tr class = "header">
+              <td class ="colhead"> Title</td>
+              <td class ="colhead"> id</td>
+              <td class ="colhead">Lastname</td>
+              <td class ="colhead">Email</td>
+            </tr>
+            <tr *ngFor = "let course of student.courses">
+                <td >{{course.title}}</td>
+                <td >{{course.id}}</td>
+
+<!--                <td ><button mat-stroked-button-->
+<!--                                style="margin: 10px;border: 2px solid #4193c7 !important; color: #4193c7;margin-left: auto;height:40px;"-->
+<!--                                (click)="showDetails(course)">-->
+<!--                            Edit-->
+<!--                        </button></td>-->
+              </tr>
+        </tbody>
+        </table>

@@ -1,0 +1,21 @@
+<div routerLink="/create" class="evt_create">
+ <button mat-stroked-button style="margin: 10px;border: 2px solid #4193c7 !important; color: #4193c7;margin-left: auto;height:40px;">
+                            Create New Course
+                        </button>
+</div>
+<div  >
+  <table class = "listtable">
+      <tbody>
+      <tr class = "header">
+        <td class ="colhead"> CourseId</td>
+        <td class ="colhead"> Course Title</td>
+        <td class ="colhead">Credit</td>
+      </tr>
+      <tr *ngFor = "let event of eventslist">
+          <td >{{event.id}}</td>
+          <td >{{event.title}}</td>
+          <td >{{event.date}}</td>
+        </tr>
+  </tbody>
+  </table>
+</div>

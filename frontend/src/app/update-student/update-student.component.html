@@ -1,0 +1,51 @@
+<div style="padding-left:9%;">
+    <div>
+      <div class = "rowbody top">
+        <div class = "createRow">
+          Create a New Student
+        </div>
+    </div>
+      <div class = "rowbody">
+      <div class = "createRow">
+        <input class = "createRow" type= "text" [(ngModel)]="student.stud_id" placeholder="Event Serial Number"/>
+      </div>
+      <div class = "createRow">
+          <input class = "createRow"type= "text"  [(ngModel)]="student.fname" placeholder="Event title"/>
+      </div>
+      <div class = "createRow">
+          <input class = "createRow" type= "text" [(ngModel)]="student.lname" placeholder="Event Description"/>
+      </div>
+      <div class = "createRow">
+          <input class = "createRow" type= "text" [(ngModel)]="student.email" placeholder="Event Date"/>
+      </div>
+    </div>
+    <h2 *ngIf="student.courses.length == 0">No Course Enrolled</h2>
+<table class = "listtable" *ngIf="student.courses.length != 0">
+            <tbody>
+            <tr class = "header">
+              <td class ="colhead"> EventId</td>
+        <td class ="colhead"> Event</td>
+        <td class ="colhead">Date</td>
+            </tr>
+            <tr *ngFor = "let course of student.courses">
+                <td >{{course.id}}</td>
+                <td >{{course.title}}</td>
+                <td >{{course.date}}</td>
+
+
+                <td ><button mat-stroked-button
+                                style="margin: 10px;border: 2px solid #4193c7 !important; color: #4193c7;margin-left: auto;height:40px;"
+                                (click)="deleteCourse(course)">
+                            Edit
+                        </button></td>
+              </tr>
+        </tbody>
+        </table>
+    <div class = "bottom_btns">
+        <span class = "btn_create"><span routerLink="/students">Back</span></span>
+
+        <span class = "btn_create save"><span (click)= save(student)> Save </span></span>
+    </div>
+
+    </div>
+  </div>

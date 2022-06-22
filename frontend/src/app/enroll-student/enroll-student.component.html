@@ -1,0 +1,30 @@
+
+<h2>Courses:</h2>
+<h2 *ngIf="student.courses.length == 0">No Course Enrolled</h2>
+<table class = "listtable" *ngIf="student.courses.length != 0">
+            <tbody>
+            <tr class = "header">
+              <td class ="colhead"> Title</td>
+              <td class ="colhead"> id</td>
+
+            </tr>
+            <tr *ngFor = "let course of student.courses">
+                <td >{{course.title}}</td>
+                <td >{{course.id}}</td>
+
+<!--                <td ><button mat-stroked-button-->
+<!--                                style="margin: 10px;border: 2px solid #4193c7 !important; color: #4193c7;margin-left: auto;height:40px;"-->
+<!--                                (click)="showDetails(course)">-->
+<!--                            Edit-->
+<!--                        </button></td>-->
+              </tr>
+        </tbody>
+        </table>
+<select [(ngModel)]="selectedCourse" (change)="selectOption($event.target.value)">
+    <option *ngFor="let item of eventslist"
+        [value]="item.id">
+        {{item.title}}
+    </option>
+</select>
+<button (click)="addCourse()">Add Course</button>
+<button (click)="enroll()">Enroll</button>

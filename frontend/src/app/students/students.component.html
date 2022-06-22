@@ -1,0 +1,36 @@
+<h3> List of students:</h3>
+<div routerLink="/create-student" class="evt_create">
+  <button mat-stroked-button style="margin: 10px;border: 2px solid #4193c7 !important; color: #4193c7;margin-left: auto;height:40px;">
+                            Create New student
+                        </button>
+</div>
+<div>
+        <table class = "listtable">
+            <tbody>
+            <tr class = "header">
+              <td class ="colhead"> Student ID</td>
+              <td class ="colhead"> Firstname</td>
+              <td class ="colhead">Lastname</td>
+              <td class ="colhead">Email</td>
+            </tr>
+            <tr *ngFor = "let stud of studentslist">
+                <td >{{stud.stud_id}}</td>
+                <td >{{stud.fname}}</td>
+                <td >{{stud.lname}}</td>
+                <td >{{stud.email}}</td>
+                <td ><button mat-stroked-button
+                                style="margin: 10px;border: 2px solid #4193c7 !important; color: #4193c7;margin-left: auto;height:40px;"
+                                (click)="updateStudent(stud)">
+                            Update
+                        </button></td>
+
+                <td ><button mat-stroked-button
+                                style="margin: 10px;border: 2px solid #4193c7 !important; color: #4193c7;margin-left: auto;height:40px;"
+                                (click)="enrollStudent(stud)">
+                            Enroll
+                        </button></td>
+              </tr>
+        </tbody>
+        </table>
+      </div>
+      
