@@ -27,6 +27,7 @@ a:hover{
 .left_bar{
 float: left;
 width:30%;
+    height: 300px;
 }
 .right_bar{
     float: left;

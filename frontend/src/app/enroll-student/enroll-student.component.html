@@ -1,4 +1,4 @@
-
+<div>
 <h2>Courses:</h2>
 <h2 *ngIf="student.courses.length == 0">No Course Enrolled</h2>
 <table class = "listtable" *ngIf="student.courses.length != 0">
@@ -20,11 +20,14 @@
               </tr>
         </tbody>
         </table>
-<select [(ngModel)]="selectedCourse" (change)="selectOption($event.target.value)">
+
+<select style="width: 100px; margin: 20px" [(ngModel)]="selectedCourse" (change)="selectOption($event.target.value)">
     <option *ngFor="let item of eventslist"
         [value]="item.id">
         {{item.title}}
     </option>
 </select>
-<button (click)="addCourse()">Add Course</button>
+<button style="margin: 20px; " (click)="addCourse()">Add Course</button>
 <button (click)="enroll()">Enroll</button>
+
+    </div>

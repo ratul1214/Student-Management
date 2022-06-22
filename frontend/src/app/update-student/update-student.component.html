@@ -1,14 +1,8 @@
 <div style="padding-left:9%;">
     <div>
-      <div class = "rowbody top">
-        <div class = "createRow">
-          Create a New Student
-        </div>
-    </div>
+
       <div class = "rowbody">
-      <div class = "createRow">
-        <input class = "createRow" type= "text" [(ngModel)]="student.stud_id" placeholder="Event Serial Number"/>
-      </div>
+
       <div class = "createRow">
           <input class = "createRow"type= "text"  [(ngModel)]="student.fname" placeholder="Event title"/>
       </div>
@@ -36,7 +30,7 @@
                 <td ><button mat-stroked-button
                                 style="margin: 10px;border: 2px solid #4193c7 !important; color: #4193c7;margin-left: auto;height:40px;"
                                 (click)="deleteCourse(course)">
-                            Edit
+                            Delete
                         </button></td>
               </tr>
         </tbody>
