@@ -58,9 +58,13 @@ def create_student():
     print("student created successfully")
     print("stud_id", request.json['stud_id'])
 
-    students.insert_one({"stud_id": request.json['stud_id'], "fname": request.json['fname'],
-                  "lname": request.json['lname'], "email": request.json['email'] , "courses":[]})
-    return "student created successfully"
+    try:
+        students.insert_one({"stud_id": request.json['stud_id'], "fname": request.json['fname'],
+                             "lname": request.json['lname'], "email": request.json['email'], "courses": []})
+        return "student created successfully"
+    except Exception:
+        return "Sorry cannot be saved"
+
 
 @app.route("/addcourse", methods=['GET', 'POST'])
 def add_course():
